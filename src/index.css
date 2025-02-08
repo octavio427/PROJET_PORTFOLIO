@@ -52,9 +52,14 @@ button {
   background-color: #1a1a1a;
   cursor: pointer;
   transition: border-color 0.25s;
+  margin: 1em;
 }
+
+/* texte */
 button:hover {
   border-color: #646cff;
+  border-color: #FFFFFF;
+  color: #646cff;
 }
 button:focus,
 button:focus-visible {
@@ -63,13 +68,47 @@ button:focus-visible {
 
 @media (prefers-color-scheme: light) {
   :root {
-    color: #213547;
+    /* color: #213547;  couleur texte acueil origine */
+    color: #FFFFFF;
     background-color: #ffffff;
   }
   a:hover {
     color: #747bff;
   }
   button {
-    background-color: #f9f9f9;
+    background-color: #dfd9d9;
   }
+}
+
+
+.video-fullscreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  background-color: black; /* l'arrière-plan est noir */
+  /*background-image: url('./assets/VideoPage/etoiles.mp4');  Chemin vers votre image de fond 
+  background-size: cover; /* Pour que l'image couvre tout l'écran 
+  background-position: center; /* Pour centrer l'image de fond */
+
+}
+
+.video-playing video {
+  display: block; /* Afficher la vidéo en plein écran */
+}
+
+.video-playing *:not(video) {
+  display: none; /* Masquer les autres éléments lorsque la vidéo est lue */
+}
+
+.background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1; /* Pour s'assurer que la vidéo est derrière le contenu */
 }
