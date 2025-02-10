@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import './App.css';
 import './index.css';
 import Image from './assets/images/main_pointeur.png';
-import backgroundVideo from './assets/VideoPage/video_portfolio.mp4';
-import VidebackgroundVideo from './assets/VideoPage/etoiles.mp4';
+import Video from './assets/VideoPage/video_portfolio.mp4';
+import BackgroundVideo from './assets/VideoPage/etoiles.mp4';
+
+// import BackgroundVideo from './components/BackgroundVideo';
 
 function Accueil() {
     const [isVideoPlaying, setIsVideoPlaying] = useState(false);
@@ -43,11 +45,12 @@ function Accueil() {
             {/* Vidéo de fond */}
             <video
                 className="background-video"
-                src={VidebackgroundVideo}
+                src={BackgroundVideo}
                 autoPlay
                 loop
                 muted
             ></video>
+            {/* <BackgroundVideo /> */}
 
             <div className="relative z-10 flex items-center justify-center h-full">
                 <h1 className="text-white-50 text-4xl font-bold">
@@ -56,7 +59,7 @@ function Accueil() {
             </div>
             <video
                 id="video"
-                src={backgroundVideo}
+                src={Video}
                 className={`mb-4 ${isVideoPlaying ? 'video-fullscreen' : ''}`}
                 style={{ width: '70%', height: 'auto' }}
                 muted
