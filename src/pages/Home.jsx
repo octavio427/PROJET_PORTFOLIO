@@ -1,61 +1,39 @@
-import React, { useState } from 'react';
+import React from 'react';
 import '../App.css';
 import '../index.css';
 
-
+import Navbar from '../layout/Navbar';
+import Footer from '../layout/Footer';
 import BackgroundVideo from '../assets/VideoPage/etoiles.mp4';
 
-// import BackgroundVideo from './components/BackgroundVideo';
-
 function Accueil() {
-    
-
     return (
-        <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
-            {/* Vidéo de fond */}
-            <video
-                className="background-video"
-                src={BackgroundVideo}
-                autoPlay
-                loop
-                muted
-            ></video>
-            {/* <BackgroundVideo /> */}
-
-            <div className="relative z-10 flex items-center justify-center h-full">
-                <h1 className="text-white-50 text-4xl font-bold">
-                    Bienvenue !
-                </h1>
+        <div className="flex flex-col min-h-screen">
+            {/* Barre de navigation collée en haut, prenant toute la largeur */}
+            <div className="w-full">
+                <Navbar />
             </div>
-            
-            
-                <>
-                    <h1 className="text-3xl text-black font-bold mb-2">
-                        sur mon portfolio développeur web
+
+            {/* Contenu principal avec vidéo de fond, prenant toute la largeur */}
+            <div className="flex-grow relative w-full">
+                <video
+                    className="background-video object-cover z-0"
+                    src={BackgroundVideo}
+                    autoPlay
+                    loop
+                    muted
+                ></video>
+                <div className="relative z-10 flex flex-col items-center justify-center h-full bg-gray-900 bg-opacity-50">
+                    <h1 className="text-white text-4xl font-bold">
+                        Bienvenue !
                     </h1>
-                    {/* <h2 className="text-xl mb-4">
-                        L’aventure commence
-                    </h2>
-                    <img 
-                        src={Image}
-                        alt="Doigt pointant vers le bas" 
-                        className="mb-4 " // Ajustez la taille de l'image
-                        style={{ width: '10%', height: 'auto' }}
-                    />
-                    <div className="flex flex-col gap-5 ">
-                        <button
-                            onClick={handleStart}
-                            className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400">
-                            START
-                        </button>
-                        <button
-                            onClick={handleHomeRedirect}
-                            className="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-400">
-                            Passez l’intro
-                        </button>
-                    </div> */}
-                </>
-           
+                </div>
+            </div>
+
+            {/* Pied de page collé en bas, prenant toute la largeur */}
+            <div className="flex-auto w-full">
+                <Footer />
+            </div>
         </div>
     );
 }

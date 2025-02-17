@@ -6,7 +6,7 @@
 
 
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  /* font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif; */
   line-height: 1.5;
   font-weight: 400;
 
@@ -80,7 +80,7 @@ button:focus-visible {
   }
 }
 
-
+/* video intro */
 .video-fullscreen {
   position: fixed;
   top: 0;
@@ -103,6 +103,7 @@ button:focus-visible {
   display: none; /* Masquer les autres éléments lorsque la vidéo est lue */
 }
 
+/* video fond */
 .background-video {
   position: fixed;
   top: 0;
@@ -110,5 +111,11 @@ button:focus-visible {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: -1; /* Pour s'assurer que la vidéo est derrière le contenu */
+  z-index: -1; 
 }
+
+/* Durée de la transition en fondu */
+/* .fade-out {
+  opacity: 0;
+  transition: opacity 2s ease-out; 
+} */
