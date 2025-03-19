@@ -1,18 +1,11 @@
 
 import React from 'react';
-import BackgroundVideo from '../assets/VideoPage/etoiles.mp4';
 
-const About = () => {
+
+export default function About () {
     return (
         <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
-            {/* Vidéo de fond */}
-            <video
-                className="background-video"
-                src={BackgroundVideo}
-                autoPlay
-                loop
-                muted
-            ></video>
+            
             <h1 className="text-4xl text-gray-800">
                 À Propos
             </h1>
@@ -23,4 +16,4 @@ const About = () => {
     );
 };
 
-export default About;
+
