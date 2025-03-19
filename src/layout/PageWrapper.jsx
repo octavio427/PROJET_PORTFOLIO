@@ -1,6 +1,6 @@
 
 import React from 'react';
-import Navbar from './Navbar';
+// import Navbar from './Navbar';
 
 const PageWrapper = ({ children, showNavbar = true }) => {
     return (

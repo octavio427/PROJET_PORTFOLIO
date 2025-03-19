@@ -2,21 +2,28 @@ import React from 'react';
 import { useState } from 'react';
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import './index.css';
-// import BackgroundVideo from '../pages/assets/VideoPage/etoiles.mp4';
+import '../index.css';
 
-import BackgroundVideo from '../assets/VideoPage/etoiles.mp4';
+import EtoilesVideo from '../assets/VideoPage/etoiles.mp4';
 
-const BackgroundVideo = () => {
+export default function BackgroundVideo  () {
     return (
         <div className="relative h-screen w-full overflow-hidden">
             <video
                 className="background-video"
-                src={BackgroundVideo}
+                src={EtoilesVideo}
                 autoPlay
                 loop
                 muted
             ></video>
+
+            {/* <video className="absolute top-0 left-0 w-full h-full object-cover -z-10" 
+                src={EtoilesVideo} 
+                autoPlay 
+                loop 
+                muted
+            ></video> */}
+
 
             {/* <video
                 className="absolute top-0 left-0 w-full h-full object-cover"
@@ -33,4 +40,4 @@ const BackgroundVideo = () => {
     );
 };
 
-export default BackgroundVideo;
+

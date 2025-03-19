@@ -3,9 +3,9 @@ import './App.css';
 import './index.css';
 import Image from './assets/images/main_pointeur.png';
 import Video from './assets/VideoPage/video_portfolio.mp4';
-import BackgroundVideo from './assets/VideoPage/etoiles.mp4';
+// import BackgroundVideo from './assets/VideoPage/etoiles.mp4';
 
-function Accueil() {
+export default function Accueil() {
     const [isVideoPlaying, setIsVideoPlaying] = useState(false);
 
     const handleStart = () => {
@@ -27,7 +27,7 @@ function Accueil() {
         
         // Lecture de la vidéo
         videoElement.play().then(() => {
-            videoElement.muted = false; // Active le son après le démarrage
+            videoElement.muted = false; 
         }).catch(error => console.error("Erreur de lecture :", error));
 
         // Mode plein écran
@@ -47,7 +47,7 @@ function Accueil() {
         setTimeout(() => {
             videoElement.remove(); // Supprime la vidéo du DOM
             window.location.href = './Home';
-        }, 19000); // Durée totale de la vidéo
+        }, 19000); 
     };
 
     const handleHomeRedirect = () => {
@@ -55,9 +55,9 @@ function Accueil() {
     };
 
     return (
-        <div className={`flex flex-col items-center justify-center min-h-screen bg-gray-100 ${isVideoPlaying ? 'video-playing' : ''}`}>
+        <div className={`flex flex-col text-centeritems-center justify-center min-h-screen bg-gray-100 ${isVideoPlaying ? 'video-playing' : ''}`}>
             {/* Vidéo de fond */}
-            <video className="background-video absolute top-0 left-0 w-full h-full object-cover" src={BackgroundVideo} autoPlay loop muted></video>
+            {/* <video className="background-video absolute top-0 left-0 w-full h-full object-cover" src={BackgroundVideo} autoPlay loop muted></video> */}
     
             <div className="relative z-10 flex flex-col mt-50 items-center justify-center text-center h-full">
                 {!isVideoPlaying && (
@@ -81,13 +81,17 @@ function Accueil() {
                             <button
                                 onClick={handleStart}
                                 className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400">
-                                START
+                                * START
                             </button>
+                            <p className="text-xl" >
+                                * Video intro 1mn
+                            </p>
                             <button
                                 onClick={handleHomeRedirect}
                                 className="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-400">
                                 Passez l’intro
                             </button>
+                            
                         </div>
                     </>
                 )}
@@ -96,4 +100,4 @@ function Accueil() {
     );
 }
 
-export default Accueil;
+

@@ -1,31 +1,82 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 export default function Footer() {
     return (
-        <footer className=" w-full bg-black text-white py-6 mt-auto text-sm">
-            <div className="container mx-auto flex justify-between px-4">
-                <div className="flex flex-col space-y-4">
-                    <h2 className="text-xl font-bold">
+        <footer style={{ 
+            position: 'fixed', 
+            bottom: 0, 
+            left: 0, 
+            width: '100%', 
+            backgroundColor: 'black', 
+            color: 'white', 
+            display: 'flex', 
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            zIndex: 50,
+            // padding: '10px 0'
+            }}> 
+
+            <div style={{ 
+                width: '80%', 
+                display: 'flex', 
+                justifyContent: 'space-between', 
+                padding: '0 20px' 
+                }}>
+                <div style={{ 
+                    // display: 'flex', 
+                    flexDirection: 'column' 
+                    }}>
+                    <p style={{ 
+                        fontSize: '1.25rem', 
+                        fontWeight: 'bold' 
+                        }}>
                         Contactez-nous
-                    </h2>
-                    <p>Kali</p>
-                    <p>reservation@contact.com</p>
+                    </p>
+                    {/* <p>Kali</p> */}
+                    <a href="#" style={{ color: 'white', textDecoration: 'none', margin: '0 5px' }}>
+                        reservation@contact.com
+                    </a>
+                    {/* <p>reservation@contact.com</p> */}
                 </div>
-            
-                <div className="flex flex-col space-y-4">
-                    <h2 className="text-xl font-bold">
+
+                <div style={{ 
+                    display: 'flex', 
+                    flexDirection: 'column', 
+                    alignItems: 'flex-end' 
+                    }}>
+                    <p style={{ 
+                        fontSize: '1.25rem', 
+                        fontWeight: 'bold' 
+                        }}>
                         Suivez-nous
-                    </h2>
-                    <button className="bg-white text-black border border-gray-300 py-2 px-4 rounded-md">
+                    </p>
+                    <button style={{ 
+                        backgroundColor: 'white', 
+                        color: 'black', 
+                        border: '1px solid #d1d5db', 
+                        padding: '8px 16px', 
+                        borderRadius: '8px' 
+                        }}>
                         Contact
                     </button>
                 </div>
             </div>
-            <br/>
-            <div className="text-center mt-4 text-xs">
-                Kali ©2025. Tous droits réservés. MENTIONS LÉGALES POLITIQUES DE CONFIDENTIALITÉ
-            </div>  
+            <div style={{ 
+                textAlign: 'center', 
+                marginTop: '10px',
+                marginBottom:'10px', 
+                fontSize: '0.75rem', 
+                width: '100%'
+                }}>
+                Kali ©2025. Tous droits réservés. 
+                <a href="/mentions-legales" style={{ color: 'white', textDecoration: 'none', margin: '0 5px' }}>
+                    MENTIONS LÉGALES
+                </a>
+                <a href="/politique-de-confidentialite" style={{ color: 'white', textDecoration: 'none', margin: '0 5px' }}>
+                    POLITIQUES DE CONFIDENTIALITÉ
+                </a>
+            </div>
         </footer>
     );
 }
-
